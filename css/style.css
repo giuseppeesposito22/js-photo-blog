@@ -1,0 +1,27 @@
+body {
+  font-family: "Edu TAS Beginner";
+  background-image: url(../img/cork.png);
+}
+
+header {
+  background-image: url(../img/wall.png);
+  height: 10vh;
+}
+
+.title {
+  font-size: 4rem;
+}
+
+.card {
+  border-radius: 0;
+  padding: 1rem;
+  position: relative;
+}
+
+.pin {
+  position: absolute;
+  width: 2rem;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
