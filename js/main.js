@@ -41,11 +41,14 @@ const generateElement = (apiUri) => {
       const pin = card.querySelector(".pin");
 
       card.addEventListener("mouseover", () => {
-        card.style.transform = "rotate(40deg)";
+        card.style.transform = "rotate(30deg) scale(1.1)";
+        card.classList.add("z-1");
         if (pin) pin.classList.add("d-none");
       });
       card.addEventListener("mouseout", () => {
         card.style.transform = "rotate(0deg)";
+        card.classList.remove("z-1");
+
         if (pin) pin.classList.remove("d-none");
       });
     }
