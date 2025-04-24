@@ -1,6 +1,9 @@
 //Elementi del DOM
 const rowEl = document.querySelector(".row");
 let cardsEl;
+const modalImg = document.getElementById("modalImg");
+
+console.log(modalImg);
 
 //End point dell' API utilizzata
 const apiUri = `https://lanciweb.github.io/demo/api/pictures/`;
@@ -36,20 +39,28 @@ const generateElement = (apiUri) => {
     rowEl.innerHTML = contentCard;
 
     cardsEl = document.querySelectorAll(".card");
+    const modal = new bootstrap.Modal(document.getElementById("imageModal"));
 
     for (const card of cardsEl) {
       const pin = card.querySelector(".pin");
+      const cardImg = card.querySelector("img:not(.pin)");
+      console.log(cardImg);
 
       card.addEventListener("mouseover", () => {
         card.style.transform = "rotate(30deg) scale(1.1)";
         card.classList.add("z-1");
-        if (pin) pin.classList.add("d-none");
+        pin.classList.add("d-none");
       });
       card.addEventListener("mouseout", () => {
         card.style.transform = "rotate(0deg)";
         card.classList.remove("z-1");
+        pin.classList.remove("d-none");
+      });
 
-        if (pin) pin.classList.remove("d-none");
+      card.addEventListener("click", () => {
+        const img = cardImg.getAttribute("src");
+        modalImg.src = img;
+        modal.show();
       });
     }
   });
