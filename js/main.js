@@ -41,7 +41,6 @@ const generateElement = (apiUri) => {
     rowEl.innerHTML = contentCard;
 
     cardsEl = document.querySelectorAll(".card");
-    // const modal = new bootstrap.Modal(document.getElementById("imageModal"));
 
     for (const card of cardsEl) {
       const pin = card.querySelector(".pin");
@@ -49,16 +48,19 @@ const generateElement = (apiUri) => {
 
       card.addEventListener("mouseover", () => {
         card.style.transform = "rotate(10deg) scale(1.1)";
-        card.classList.add("z-1");
         pin.classList.add("d-none");
-        card.classList.add("card-shadow");
+        card.classList.add(
+          "card-shadow",
+          "cursor-pointer",
+          "card-transition",
+          "z-1"
+        );
       });
 
       card.addEventListener("mouseout", () => {
         card.style.transform = "rotate(0deg)";
-        card.classList.remove("z-1");
         pin.classList.remove("d-none");
-        card.classList.remove("card-shadow");
+        card.classList.remove("card-shadow", "z-1");
       });
 
       card.addEventListener("click", () => {
