@@ -1,3 +1,26 @@
+/* Media query per adattare la grandezza del titolo alla pagina */
+.title {
+  font-size: 4rem;
+}
+
+@media screen and (min-width: 576px) {
+  .title {
+    font-size: 6rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .title {
+    font-size: 7rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .title {
+    font-size: 8rem;
+  }
+}
+
 body {
   font-family: "Edu TAS Beginner";
   background-image: url(../img/cork.png);
@@ -11,10 +34,6 @@ img {
 header {
   background-image: url(../img/wall.png);
   height: 10vh;
-}
-
-.title {
-  font-size: 4rem;
 }
 
 .card {
